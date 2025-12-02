@@ -4,12 +4,10 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 from sklearn.datasets import fetch_california_housing
-import pandas as pd
 
 housing = fetch_california_housing()
 df_california = pd.DataFrame(housing.data, columns=housing.feature_names)
 
-# Agrego la columna target
 df_california["Target"] = housing.target
 
 df_california.head()
