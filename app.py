@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+from matplotlib import pyplot as plt
+import numpy as np
 
 from sklearn.datasets import fetch_california_housing
 import pandas as pd
@@ -44,3 +46,9 @@ lat_min = st.number_input(
     value=min_lat)
 
 df_filtered = df_california[df_california["Latitude"] >= lat_min]
+
+plt.hist(df_filtrado['MedHouseVal'])
+st.pyplot()
+
+plt.scatter(df_filtrado['MedInc'], df_filtrado['MedHouseVal'])
+st.pyplot()
